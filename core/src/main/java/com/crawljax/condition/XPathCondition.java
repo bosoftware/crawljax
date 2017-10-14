@@ -6,6 +6,7 @@ import javax.xml.xpath.XPathExpressionException;
 
 import net.jcip.annotations.Immutable;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 
@@ -66,8 +67,8 @@ public class XPathCondition implements Condition {
 
 	@Override
 	public String toString() {
-		return Objects.toStringHelper(this)
-		        .add("expression", expression)
+		return new ToStringBuilder(this)
+		        .append("expression", expression)
 		        .toString();
 	}
 

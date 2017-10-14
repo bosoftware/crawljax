@@ -4,6 +4,7 @@ import java.util.regex.Pattern;
 
 import net.jcip.annotations.Immutable;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -56,9 +57,9 @@ public class RegexCondition implements Condition {
 
 	@Override
 	public String toString() {
-		return Objects.toStringHelper(this)
-		        .add("expression", expression.toString())
-		        .add("pattern", pattern.toString())
+		return new ToStringBuilder(this)
+		        .append("expression", expression.toString())
+		        .append("pattern", pattern.toString())
 		        .toString();
 	}
 

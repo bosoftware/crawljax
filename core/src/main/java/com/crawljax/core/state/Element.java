@@ -5,6 +5,7 @@ import java.util.Map.Entry;
 
 import javax.annotation.concurrent.Immutable;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.w3c.dom.Node;
 
 import com.crawljax.util.DomUtils;
@@ -136,11 +137,11 @@ public class Element implements Serializable {
 
 	@Override
 	public String toString() {
-		return Objects.toStringHelper(this)
-		        .add("node", node)
-		        .add("tag", tag)
-		        .add("text", text)
-		        .add("attributes", attributes)
+		return new ToStringBuilder(this)
+		        .append("node", node)
+		        .append("tag", tag)
+		        .append("text", text)
+		        .append("attributes", attributes)
 		        .toString();
 	}
 

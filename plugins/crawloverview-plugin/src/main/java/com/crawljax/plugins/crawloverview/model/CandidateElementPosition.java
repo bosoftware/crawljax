@@ -2,6 +2,7 @@ package com.crawljax.plugins.crawloverview.model;
 
 import javax.annotation.concurrent.Immutable;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 
@@ -77,12 +78,12 @@ public class CandidateElementPosition {
 
 	@Override
 	public String toString() {
-		return Objects.toStringHelper(this)
-		        .add("top", top)
-		        .add("left", left)
-		        .add("xpath", xpath)
-		        .add("width", width)
-		        .add("height", height)
+		return new ToStringBuilder(this)
+		        .append("top", top)
+		        .append("left", left)
+		        .append("xpath", xpath)
+		        .append("width", width)
+		        .append("height", height)
 		        .toString();
 	}
 

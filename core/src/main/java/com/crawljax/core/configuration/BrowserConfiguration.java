@@ -5,6 +5,8 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.concurrent.Immutable;
 import javax.inject.Provider;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import com.crawljax.browser.EmbeddedBrowser;
 import com.crawljax.browser.EmbeddedBrowser.BrowserType;
 import com.crawljax.browser.WebDriverBrowserBuilder;
@@ -124,12 +126,12 @@ public class BrowserConfiguration {
 
 	@Override
 	public String toString() {
-		return Objects.toStringHelper(this)
-		        .add("browsertype", browsertype)
-		        .add("numberOfBrowsers", numberOfBrowsers)
-		        .add("browserBuilder", browserBuilder)
-		        .add("remoteHubUrl", remoteHubUrl)
-		        .add("language", lang)
+		return new ToStringBuilder(this)
+		        .append("browsertype", browsertype)
+		        .append("numberOfBrowsers", numberOfBrowsers)
+		        .append("browserBuilder", browserBuilder)
+		        .append("remoteHubUrl", remoteHubUrl)
+		        .append("language", lang)
 		        .toString();
 	}
 

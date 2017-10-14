@@ -1,5 +1,6 @@
 package com.crawljax.core.configuration;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.tuple.Pair;
 
 import com.crawljax.condition.browserwaiter.WaitCondition;
@@ -107,12 +108,12 @@ public class PreCrawlConfiguration {
 
 	@Override
 	public String toString() {
-		return Objects.toStringHelper(this)
-		        .add("waitConditions", waitConditions)
-		        .add("crawlConditions", crawlConditions)
-		        .add("includedElements", includedElements)
-		        .add("excludedElements", excludedElements)
-		        .add("filterAttributeNames", filterAttributeNames)
+		return new ToStringBuilder(this)
+		        .append("waitConditions", waitConditions)
+		        .append("crawlConditions", crawlConditions)
+		        .append("includedElements", includedElements)
+		        .append("excludedElements", excludedElements)
+		        .append("filterAttributeNames", filterAttributeNames)
 		        .toString();
 	}
 

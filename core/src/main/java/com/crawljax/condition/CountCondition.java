@@ -2,6 +2,8 @@ package com.crawljax.condition;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import net.jcip.annotations.ThreadSafe;
 
 import com.crawljax.browser.EmbeddedBrowser;
@@ -45,9 +47,9 @@ public class CountCondition implements Condition {
 
 	@Override
 	public String toString() {
-		return Objects.toStringHelper(this)
-		        .add("condition", condition)
-		        .add("maxCount", maxCount)
+		return new ToStringBuilder(this)
+		        .append("condition", condition)
+		        .append("maxCount", maxCount)
 		        .toString();
 	}
 

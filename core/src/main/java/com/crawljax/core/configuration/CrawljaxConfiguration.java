@@ -8,6 +8,8 @@ import java.net.URI;
 import java.net.URLEncoder;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import com.crawljax.browser.EmbeddedBrowser.BrowserType;
 import com.crawljax.core.Crawler;
 import com.crawljax.core.CrawljaxException;
@@ -318,10 +320,10 @@ public class CrawljaxConfiguration {
 
 	@Override
 	public String toString() {
-		return Objects.toStringHelper(this).add("url", url).add("browserConfig", browserConfig)
-		        .add("plugins", plugins).add("proxyConfiguration", proxyConfiguration)
-		        .add("crawlRules", crawlRules).add("maximumStates", maximumStates)
-		        .add("maximumRuntime", maximumRuntime).add("maximumDepth", maximumDepth)
+		return new ToStringBuilder(this).append("url", url).append("browserConfig", browserConfig)
+		        .append("plugins", plugins).append("proxyConfiguration", proxyConfiguration)
+		        .append("crawlRules", crawlRules).append("maximumStates", maximumStates)
+		        .append("maximumRuntime", maximumRuntime).append("maximumDepth", maximumDepth)
 		        .toString();
 	}
 

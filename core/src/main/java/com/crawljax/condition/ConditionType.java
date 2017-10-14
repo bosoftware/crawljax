@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.annotation.concurrent.Immutable;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import com.google.common.base.Objects;
 import com.google.common.collect.ImmutableList;
 
@@ -93,10 +95,11 @@ public abstract class ConditionType {
 
 	@Override
 	public String toString() {
-		return Objects.toStringHelper(this)
-		        .add("preConditions", preConditions)
-		        .add("description", description)
-		        .add("condition", condition)
+		
+		return new ToStringBuilder(this)
+		        .append("preConditions",preConditions)
+		        .append("description",description)
+		        .append("condition",condition)
 		        .toString();
 	}
 

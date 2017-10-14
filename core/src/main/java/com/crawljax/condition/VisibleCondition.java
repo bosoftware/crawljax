@@ -2,6 +2,8 @@ package com.crawljax.condition;
 
 import net.jcip.annotations.Immutable;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import com.crawljax.browser.EmbeddedBrowser;
 import com.crawljax.core.state.Identification;
 import com.google.common.base.Objects;
@@ -29,8 +31,8 @@ public class VisibleCondition implements Condition {
 
 	@Override
 	public String toString() {
-		return Objects.toStringHelper(this)
-		        .add("identification", identification)
+		return new ToStringBuilder(this)
+		        .append("identification", identification)
 		        .toString();
 	}
 

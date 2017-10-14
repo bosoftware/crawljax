@@ -2,6 +2,8 @@ package com.crawljax.condition.invariant;
 
 import java.util.List;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import com.crawljax.condition.Condition;
 import com.crawljax.condition.ConditionType;
 import com.google.common.base.Objects;
@@ -55,9 +57,9 @@ public class Invariant extends ConditionType {
 
 	@Override
 	public String toString() {
-		return Objects.toStringHelper(this)
-		        .add("description", getDescription())
-		        .add("condition", getInvariantCondition())
+		return new ToStringBuilder(this)
+		        .append("description", getDescription())
+		        .append("condition", getInvariantCondition())
 		        .toString();
 	}
 

@@ -2,6 +2,8 @@ package com.crawljax.plugins.crawloverview.model;
 
 import javax.annotation.concurrent.Immutable;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import com.crawljax.core.state.StateVertex;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -104,10 +106,10 @@ public class State {
 
 	@Override
 	public String toString() {
-		return Objects.toStringHelper(this).add("name", name).add("id", id)
-		        .add("url", url).add("candidateElements", candidateElements)
-		        .add("fanIn", fanIn).add("fanOut", fanOut)
-		        .add("failedEvents", failedEvents).toString();
+		return new ToStringBuilder(this).append("name", name).append("id", id)
+		        .append("url", url).append("candidateElements", candidateElements)
+		        .append("fanIn", fanIn).append("fanOut", fanOut)
+		        .append("failedEvents", failedEvents).toString();
 	}
 
 }

@@ -2,6 +2,8 @@ package com.crawljax.condition;
 
 import net.jcip.annotations.Immutable;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import com.crawljax.browser.EmbeddedBrowser;
 import com.google.common.base.Objects;
 
@@ -44,8 +46,8 @@ public class NotRegexCondition implements Condition {
 
 	@Override
 	public String toString() {
-		return Objects.toStringHelper(this)
-		        .add("regexCondition", regexCondition)
+		return new ToStringBuilder(this)
+		        .append("regexCondition", regexCondition)
 		        .toString();
 	}
 

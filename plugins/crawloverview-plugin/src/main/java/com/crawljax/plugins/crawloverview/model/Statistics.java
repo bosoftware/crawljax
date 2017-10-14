@@ -5,6 +5,7 @@ import java.util.Date;
 
 import javax.annotation.concurrent.Immutable;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.time.DurationFormatUtils;
 
 import com.crawljax.core.CrawlSession;
@@ -109,14 +110,14 @@ public class Statistics {
 
 	@Override
 	public String toString() {
-		return Objects.toStringHelper(this)
-		        .add("duration", duration)
-		        .add("failedEvents", failedEvents)
-		        .add("crawlPaths", crawlPaths)
-		        .add("averageDomSize", averageDomSize)
-		        .add("edges", edges)
-		        .add("startDate", startDate)
-		        .add("stateStats", stateStats)
+		return new ToStringBuilder(this)
+		        .append("duration", duration)
+		        .append("failedEvents", failedEvents)
+		        .append("crawlPaths", crawlPaths)
+		        .append("averageDomSize", averageDomSize)
+		        .append("edges", edges)
+		        .append("startDate", startDate)
+		        .append("stateStats", stateStats)
 		        .toString();
 	}
 

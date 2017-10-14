@@ -2,6 +2,7 @@ package com.crawljax.core;
 
 import java.util.List;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.w3c.dom.Element;
 
 import com.crawljax.browser.EmbeddedBrowser;
@@ -154,12 +155,12 @@ public class CandidateElement {
 
 	@Override
 	public String toString() {
-		return Objects.toStringHelper(this)
-		        .add("identification", identification)
-		        .add("element", element)
-		        .add("formInputs", formInputs)
-		        .add("eventableCondition", eventableCondition)
-		        .add("relatedFrame", relatedFrame)
+		return new ToStringBuilder(this)
+		        .append("identification", identification)
+		        .append("element", element)
+		        .append("formInputs", formInputs)
+		        .append("eventableCondition", eventableCondition)
+		        .append("relatedFrame", relatedFrame)
 		        .toString();
 	}
 }

@@ -3,6 +3,8 @@ package com.crawljax.core.configuration;
 import java.util.Arrays;
 import java.util.List;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import com.crawljax.condition.Condition;
 import com.crawljax.condition.eventablecondition.EventableCondition;
 import com.crawljax.core.state.Eventable.EventType;
@@ -169,11 +171,11 @@ public final class CrawlElement {
 
 	@Override
 	public String toString() {
-		return Objects.toStringHelper(this).add("tagName", tagName)
-				.add("conditions", conditions).add("id", id)
-				.add("eventType", eventType)
-				.add("inputFieldIds", inputFieldIds)
-				.add("underXpath", underXpath).toString();
+		return new ToStringBuilder(this).append("tagName", tagName)
+				.append("conditions", conditions).append("id", id)
+				.append("eventType", eventType)
+				.append("inputFieldIds", inputFieldIds)
+				.append("underXpath", underXpath).toString();
 	}
 
 	/**

@@ -4,6 +4,8 @@ import static com.google.common.base.Preconditions.checkArgument;
 
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import com.crawljax.condition.Condition;
 import com.crawljax.condition.browserwaiter.WaitCondition;
 import com.crawljax.condition.crawlcondition.CrawlCondition;
@@ -461,24 +463,24 @@ public class CrawlRules {
 
 	@Override
 	public String toString() {
-		return Objects.toStringHelper(this)
-		        .add("DEFAULT_WAIT_AFTER_RELOAD", DEFAULT_WAIT_AFTER_RELOAD)
-		        .add("DEFAULT_WAIT_AFTER_EVENT", DEFAULT_WAIT_AFTER_EVENT)
-		        .add("crawlEvents", crawlEvents)
-		        .add("invariants", invariants)
-		        .add("oracleComparators", oracleComparators)
-		        .add("ignoredFrameIdentifiers", ignoredFrameIdentifiers)
-		        .add("preCrawlConfig", preCrawlConfig)
-		        .add("randomInputInForms", randomInputInForms)
-		        .add("inputSpecification", inputSpecification)
-		        .add("testInvariantsWhileCrawling", testInvariantsWhileCrawling)
-		        .add("clickOnce", clickOnce)
-		        .add("randomizeCandidateElements", randomizeCandidateElements)
-		        .add("crawlFrames", crawlFrames)
-		        .add("crawlHiddenAnchors", crawlHiddenAnchors)
-		        .add("waitAfterReloadUrl", waitAfterReloadUrl)
-		        .add("waitAfterEvent", waitAfterEvent)
-		        .add("followExternalLinks", followExternalLinks)
+		return new ToStringBuilder(this)
+		        .append("DEFAULT_WAIT_AFTER_RELOAD", DEFAULT_WAIT_AFTER_RELOAD)
+		        .append("DEFAULT_WAIT_AFTER_EVENT", DEFAULT_WAIT_AFTER_EVENT)
+		        .append("crawlEvents", crawlEvents)
+		        .append("invariants", invariants)
+		        .append("oracleComparators", oracleComparators)
+		        .append("ignoredFrameIdentifiers", ignoredFrameIdentifiers)
+		        .append("preCrawlConfig", preCrawlConfig)
+		        .append("randomInputInForms", randomInputInForms)
+		        .append("inputSpecification", inputSpecification)
+		        .append("testInvariantsWhileCrawling", testInvariantsWhileCrawling)
+		        .append("clickOnce", clickOnce)
+		        .append("randomizeCandidateElements", randomizeCandidateElements)
+		        .append("crawlFrames", crawlFrames)
+		        .append("crawlHiddenAnchors", crawlHiddenAnchors)
+		        .append("waitAfterReloadUrl", waitAfterReloadUrl)
+		        .append("waitAfterEvent", waitAfterEvent)
+		        .append("followExternalLinks", followExternalLinks)
 		        .toString();
 	}
 

@@ -34,7 +34,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<slf4j.version>1.7.7</slf4j.version>
 		<logback.version>1.1.2</logback.version>
-		<selenium.version>[2.48.0,)</selenium.version>
+		<selenium.version>[3.6,)</selenium.version>
 		<jetty.version>9.3.0.M1</jetty.version>
 		<metrics.version>3.0.2</metrics.version>
 	</properties>
@@ -109,7 +109,7 @@
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
-			<version>18.0</version>
+			<version>23.0</version>
 		</dependency>
 
 		<!-- Logging -->

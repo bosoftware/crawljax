@@ -2,6 +2,8 @@ package com.crawljax.plugins.crawloverview.model;
 
 import javax.annotation.concurrent.Immutable;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+
 import com.crawljax.core.ExitNotifier.ExitStatus;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -70,9 +72,9 @@ public final class OutPutModel {
 
 	@Override
 	public String toString() {
-		return Objects.toStringHelper(this).add("exitStatus", exitStatus)
-		        .add("states", states).add("edges", edges)
-		        .add("statistics", statistics).toString();
+		return new ToStringBuilder(this).append("exitStatus", exitStatus)
+		        .append("states", states).append("edges", edges)
+		        .append("statistics", statistics).toString();
 	}
 
 }

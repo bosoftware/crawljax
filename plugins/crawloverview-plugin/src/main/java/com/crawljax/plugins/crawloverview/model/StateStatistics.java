@@ -4,6 +4,8 @@ import java.util.Collection;
 
 import javax.annotation.concurrent.Immutable;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.Objects;
@@ -112,13 +114,13 @@ public class StateStatistics {
 
 	@Override
 	public String toString() {
-		return Objects.toStringHelper(this)
-		        .add("leastFanOut", leastFanOut)
-		        .add("leastFanIn", leastFanIn)
-		        .add("mostFanOut", mostFanOut)
-		        .add("mostFanIn", mostFanIn)
-		        .add("totalNumberOfStates", totalNumberOfStates)
-		        .add("urls", urls)
+		return new ToStringBuilder(this)
+		        .append("leastFanOut", leastFanOut)
+		        .append("leastFanIn", leastFanIn)
+		        .append("mostFanOut", mostFanOut)
+		        .append("mostFanIn", mostFanIn)
+		        .append("totalNumberOfStates", totalNumberOfStates)
+		        .append("urls", urls)
 		        .toString();
 	}
 
